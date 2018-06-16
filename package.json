@@ -2,10 +2,7 @@
   "name": "travel",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dominikbujas.bitbucket.io/travel",
-  "devDependencies": {
-    "react-scripts": "0.8.4"
-  },
+  "homepage": "https://ozonkor.github.io/travel",
   "dependencies": {
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
