@@ -2,7 +2,7 @@
   "name": "travel",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ozonkor.github.io/travel",
+  "homepage": "https://ozonkor.github.io/trips",
   "dependencies": {
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
