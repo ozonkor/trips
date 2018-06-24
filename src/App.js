@@ -3,8 +3,8 @@ import logo from './logo.svg';
 // import Button from 'react-toolbox/lib/button/Button';
 
 import { getQueryParams } from './utils';
-import Login from './Login';
-import Main from './Main';
+import Login from './views-js/Login';
+import Main from './views-js/Main';
 import './App.css';
 
 class App extends Component {

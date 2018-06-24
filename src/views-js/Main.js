@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import * as utils from './utils';
-import './Main.css';
+import * as utils from '../utils';
+import '../stylesheets/Main.css';
+import addTravelForm from "./addTravelForm";
 
 class Main extends Component {
     constructor(props) {
@@ -25,6 +26,12 @@ class Main extends Component {
                     info={info}
                 />
                 <div className='Main-content'>
+
+                    Basic View
+
+                </div>
+                <div>
+                    <addTravelForm getTravel={this.getTravel}/>
                 </div>
             </div>
         );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LoginButton from './LoginButton';
-import './Login.css';
+import '../stylesheets/Login.css';
 
 class Login extends Component {
     render() {
@@ -8,7 +8,7 @@ class Login extends Component {
             <div className="Login">
                 <div className="Login-header">
                     <h2 className="Login-title">
-                        My tripszzzz
+                        My trips
                     </h2>
                     <p className="Login-intro">
                         An app to share with your trips.

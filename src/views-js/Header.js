@@ -3,7 +3,7 @@ import AppBar from 'react-toolbox/lib/app_bar/AppBar';
 import Navigation from 'react-toolbox/lib/navigation/Navigation';
 import Link from 'react-toolbox/lib/link/Link';
 import Avatar from 'react-toolbox/lib/avatar/Avatar';
-import './Header.css';
+import '../stylesheets/Header.css';
 
 class Header extends Component {
     handleClickLogOut() {
