@@ -14,6 +14,7 @@ class Login extends Component {
                         An app to share with your trips.
                     </p>
                 </div>
+
                 <div className="Login-buttons">
                     <LoginButton />
                 </div>

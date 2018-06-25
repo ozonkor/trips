@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import * as utils from '../utils';
 import '../stylesheets/Main.css';
-import addTravelForm from "./addTravelForm";
+import AddTravelForm from "./AddTravelForm";
 
 class Main extends Component {
     constructor(props) {
@@ -19,7 +19,6 @@ class Main extends Component {
 
     render() {
         const {info} = this.state;
-
         return (
             <div className='Main'>
                 <Header
@@ -31,7 +30,7 @@ class Main extends Component {
 
                 </div>
                 <div>
-                    <addTravelForm getTravel={this.getTravel}/>
+                    <AddTravelForm getTravel={this.getTravel}/>
                 </div>
             </div>
         );

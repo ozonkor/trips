@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-// import Button from 'react-toolbox/lib/button/Button';
 
 import { getQueryParams } from './utils';
 import Login from './views-js/Login';
 import Main from './views-js/Main';
+import AddTravelForm from './views-js/AddTravelForm';
+import Continents from './views-js/Continents';
 import './App.css';
+import TripsFromCountry from "./views-js/TripsFromCountry";
+import Trip from "./views-js/Trip";
 
 class App extends Component {
     constructor() {
@@ -22,10 +24,11 @@ class App extends Component {
     render() {
         return (
             <div className='App'>
-                {this.isLoggedIn()
-                    ? <Main token={this.state.token} />
-                    : <Login />
-                }
+                <Login />
+                <AddTravelForm getTravel={this.getTravel}/>
+                <Continents />
+                <TripsFromCountry/>
+                <Trip/>
             </div>
         );
     }
