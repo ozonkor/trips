@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { getQueryParams } from './utils';
 import Login from './views-js/Login';
 import Main from './views-js/Main';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Navbar,NavbarBrand} from 'reactstrap';
 import AddTravelForm from './views-js/AddTravelForm';
 import Continents from './views-js/Continents';
 import './App.css';
@@ -24,6 +26,9 @@ class App extends Component {
     render() {
         return (
             <div className='App'>
+                <Navbar dark color="primary">
+                    <NavbarBrand> Tirps </NavbarBrand>
+                </Navbar>
                 <Login />
                 <AddTravelForm getTravel={this.getTravel}/>
                 <Continents />
