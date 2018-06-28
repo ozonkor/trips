@@ -46,8 +46,8 @@ class MyTrips extends React.Component {
   render () {
       const {
           selectedContinentID,
-          trips,
-          selectedTrip
+          selectedTrip,
+          trips
       } = this.state
     return (
         <div className="container-fluid dashboard">
@@ -59,10 +59,15 @@ class MyTrips extends React.Component {
                         onContinentSelect={this.onContinentSelect.bind(this)}
                     />
                 </div>
-                <div>
-                    <TripsContainer
-                        trips={trips}
-                    />
+                <div className="col-lg-9">
+                    {!selectedTrip ? <TripsContainer
+                            trips={trips}
+                            onTripSelect={this.onTripSelect.bind(this)}
+                        /> :
+                        <TripView
+                            selectedTrip={selectedTrip}
+                        />
+                    }
                 </div>
             </div>
         </div>
