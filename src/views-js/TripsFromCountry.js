@@ -20,7 +20,7 @@ export default class TripsFromCountry extends Component {
                     tripsFromCountry: response.data,
                 })
             })
-            .catch(error => console.log(error))
+            .catch(error => console.log(error))git branch --set-upstream-to=origin/<branch>
     }
 
     componentDidMount() {
