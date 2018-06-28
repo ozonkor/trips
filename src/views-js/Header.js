@@ -3,21 +3,21 @@ import AppBar from 'react-toolbox/lib/app_bar/AppBar';
 import Navigation from 'react-toolbox/lib/navigation/Navigation';
 import Link from 'react-toolbox/lib/link/Link';
 import Avatar from 'react-toolbox/lib/avatar/Avatar';
-import '../stylesheets/Header.css';
+import './Header.css';
 
 class Header extends Component {
-    handleClickLogOut() {
-        window.location.href = window.location.href.replace(/\?.*$/, '');
-    }
+  handleClickLogOut() {
+    window.location.href = window.location.href.replace(/\?.*$/, '');
+  }
 
-    render() {
-        const { info } = this.props;
+  render() {
+    const {info, onPageChange} = this.props;
 
-        return (
-            <AppBar title='Trips' leftIcon='menu'>
-                <Navigation type='horizontal'>
-                    {info != null && (
-                        <span>
+    return (
+      <AppBar title='Trips Share'>
+        <Navigation type='horizontal'>
+          {info != null && (
+            <span>
               <Avatar className='Header-userAvatar'
                       image={info.avatar_url}
               />
@@ -25,18 +25,30 @@ class Header extends Component {
                 {info.name}
               </span>
             </span>
-                    )}
-                    <Link
-                        href='#'
-                        active
-                        label='Log out'
-                        className='Header-link'
-                        onClick={this.handleClickLogOut}
-                    />
-                </Navigation>
-            </AppBar>
-        );
-    }
+          )}
+          <Link
+            href='#'
+            label='My Trips'
+            className='Header-link'
+            onClick={() => onPageChange('my_trips')}
+          />
+          <Link
+            href='#'
+            label='Dashboard'
+            className='Header-link'
+            onClick={() => onPageChange('dashboard')}
+          />
+          <Link
+            href='#'
+            active
+            label='Log out'
+            className='Header-link'
+            onClick={this.handleClickLogOut}
+          />
+        </Navigation>
+      </AppBar>
+    );
+  }
 }
 
 export default Header;
