@@ -1,16 +1,11 @@
 import React from 'react';
 import axios from 'axios'
 import Trip from './Trip'
-import ContinentsContainer from './ContinentsContainer'
-import TripsContainer from './TripsContainer'
-import TripView from './TripView'
 
 class MyTrips extends React.Component {
   constructor (props) {
     super(props)
       this.state = {
-          selectedContinentID: 1,
-          selectedTrip: undefined,
           trips: []
       }
   }
@@ -33,36 +28,22 @@ class MyTrips extends React.Component {
         });
     }
 
-    onTripSelect(trip) {
-        this.setState({
-            selectedTrip: trip
-        });
-    }
-
   componentDidMount () {
     this.fetchTrips()
   }
 
   render () {
-      const {
-          selectedContinentID,
-          trips,
-          selectedTrip
-      } = this.state
+      const {trips} = this.state
     return (
         <div className="container-fluid dashboard">
             <div className="row">
 
-                <div className="col-lg-3">
-                    <ContinentsContainer
-                        selectedContinentID={selectedContinentID}
-                        onContinentSelect={this.onContinentSelect.bind(this)}
-                    />
-                </div>
-                <div>
-                    <TripsContainer
-                        trips={trips}
-                    />
+                <div className="col-sm-12">
+                  <div className="row">
+                    {trips.map(trip => {
+                      return (<Trip showTrip={() => {}} trip={trip} key={trip.id}/>)
+                    })}
+                  </div>
                 </div>
             </div>
         </div>
