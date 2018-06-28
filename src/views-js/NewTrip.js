@@ -28,13 +28,21 @@ class NewTrip extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit.bind(this)}>
-        <section>
-          <Input type='text' label='Name' name='name' value={this.state.name} onChange={this.handleChange.bind(this, 'name')} maxLength={10} />
-          <Input type='text' label='Description' name='Description' value={this.state.description} onChange={this.handleChange.bind(this, 'description')}/>
-          <Input type="submit" value="Submit" />
-        </section>
-      </form>
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-2" />
+          <div className="col-sm-8">
+            <form onSubmit={this.handleSubmit.bind(this)}>
+              <section>
+                <Input type='text' label='Name' name='name' required value={this.state.name} onChange={this.handleChange.bind(this, 'name')} maxLength={10} />
+                <Input type='text' label='Description' name='Description' required value={this.state.description} onChange={this.handleChange.bind(this, 'description')}/>
+                <Input type="submit" value="Submit" />
+              </section>
+            </form>
+          </div>
+          <div className="col-sm-2" />
+        </div>
+      </div>
     );
   }
 }
