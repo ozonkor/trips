@@ -10,11 +10,11 @@ class NewTrip extends React.Component {
   };
 
   handleSubmit(event) {
-    const {onNewTripSuccess} = this.props
+    const {onNewTripSuccess ,token} = this.props
 
     axios({
       method: 'post',
-      url: 'https://applications-uj-server.herokuapp.com/trips',
+      url: `https://applications-uj-server.herokuapp.com/trips?token=${token}`,
       data: {
         name: this.state.name,
         description: this.state.description

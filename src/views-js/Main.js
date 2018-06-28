@@ -42,7 +42,7 @@ class Main extends Component {
         return <MyTrips token={token}/>
       case 'newTrip':
         const success = () => this.setState({page: 'myTrips'})
-        return <NewTrip onNewTripSuccess={success}/>
+        return <NewTrip token={token} onNewTripSuccess={success}/>
       default:
         return <DashboardContainer />
     }
