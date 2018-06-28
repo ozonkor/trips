@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import Main from './views-js/Main'
+import Login from './views-js/Login'
 import {getQueryParams} from './utils'
 
 class App extends Component {
@@ -18,7 +19,10 @@ class App extends Component {
   render () {
     return (
       <div className="App" id="app">
-        <Main token={this.state.token} />
+        {this.isLoggedIn()
+          ? <Main token={this.state.token} />
+          : <Login />
+        }
       </div>
     );
   }
