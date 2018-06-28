@@ -20,12 +20,14 @@ class Trip extends React.Component {
             </h4>
             <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
               aspernatur!</p>
-            <a href="#"
-               className="btn btn-primary"
-               onClick={(e) => this.handleClick(e)}
-            >
-              Show
-            </a>
+            { this.props.showTrip &&
+              <a href="#"
+                 className="btn btn-primary"
+                 onClick={(e) => this.handleClick(e)}
+              >
+                Show
+              </a>
+            }
           </div>
           <div className="card-footer">
             <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>

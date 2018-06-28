@@ -41,7 +41,7 @@ class MyTrips extends React.Component {
                 <div className="col-sm-12">
                   <div className="row">
                     {trips.map(trip => {
-                      return (<Trip showTrip={() => {}} trip={trip} key={trip.id}/>)
+                      return (<Trip showTrip={undefined} trip={trip} key={trip.id}/>)
                     })}
                   </div>
                 </div>
