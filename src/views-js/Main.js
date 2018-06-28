@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header'
+import MyTrips from './MyTrips'
+import NewTrip from './NewTrip'
 import DashboardContainer from './DashboardContainer'
 import * as utils from '../utils';
 
@@ -30,16 +32,31 @@ class Main extends Component {
       });
   }
 
+  renderPage(page) {
+    const {token} = this.props
+
+    switch(page) {
+      case 'dashboard':
+        return <DashboardContainer />
+      case 'myTrips':
+        return <MyTrips token={token}/>
+      case 'newTrip':
+        return <NewTrip />
+      default:
+        return <DashboardContainer />
+    }
+  }
+
   render() {
     const {info, page} = this.state
-    const {token} = this.props
     return (
       <div>
         <Header
           info={info}
           onPageChange={this.handlePageChange.bind(this)}
+          page={page}
         />
-        { page == 'dashboard' ? <DashboardContainer /> : <div>Dupa</div> }
+        {this.renderPage(page)}
         <footer className="container-fluid">
           <nav className="navbar fixed-bottom">
             Copyright &copy; Janek Kurzydlo & Dominik Bujas 2018

@@ -11,10 +11,10 @@ class Header extends Component {
   }
 
   render() {
-    const {info, onPageChange} = this.props;
+    const {info, onPageChange, page} = this.props;
 
     return (
-      <AppBar title='Trips Share'>
+      <AppBar title='TRIPS SHARE'>
         <Navigation type='horizontal'>
           {info != null && (
             <span>
@@ -28,19 +28,27 @@ class Header extends Component {
           )}
           <Link
             href='#'
+            label='New Trip'
+            className='Header-link'
+            active={page === 'newTrip'}
+            onClick={() => onPageChange('newTrip')}
+          /> |
+          <Link
+            href='#'
             label='My Trips'
             className='Header-link'
-            onClick={() => onPageChange('my_trips')}
-          />
+            active={page === 'myTrips'}
+            onClick={() => onPageChange('myTrips')}
+          /> |
           <Link
             href='#'
             label='Dashboard'
             className='Header-link'
+            active={page === 'dashboard'}
             onClick={() => onPageChange('dashboard')}
-          />
+          /> |
           <Link
             href='#'
-            active
             label='Log out'
             className='Header-link'
             onClick={this.handleClickLogOut}
