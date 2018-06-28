@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ContinentsContainer from './ContinentsContainer'
 import TripsContainer from './TripsContainer'
+import TripView from './TripView'
 import '../index.css';
 
 class ShopContainer extends Component {
@@ -8,17 +9,28 @@ class ShopContainer extends Component {
     super(props)
     this.state = {
       selectedContinentID: 1,
+      selectedTrip: undefined,
     }
   }
 
   onContinentSelect(category) {
     this.setState({
-      selectedContinentID: category.id
+      selectedContinentID: category.id,
+      selectedTrip: undefined,
+    });
+  }
+
+  onTripSelect(trip) {
+    this.setState({
+      selectedTrip: trip
     });
   }
 
   render () {
-    const {selectedContinentID} = this.state
+    const {
+      selectedContinentID,
+      selectedTrip
+    } = this.state
 
     return (
       <div className="container-fluid dashboard">
@@ -32,9 +44,14 @@ class ShopContainer extends Component {
           </div>
 
           <div className="col-lg-9">
-            <TripsContainer
+            {!selectedTrip ? <TripsContainer
               selectedContinentID={selectedContinentID}
-            />
+              onTripSelect={this.onTripSelect.bind(this)}
+            /> :
+              <TripView
+                selectedTrip={selectedTrip}
+              />
+            }
           </div>
         </div>
       </div>

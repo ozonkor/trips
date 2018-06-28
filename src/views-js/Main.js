@@ -39,7 +39,7 @@ class Main extends Component {
           info={info}
           onPageChange={this.handlePageChange.bind(this)}
         />
-        <DashboardContainer />
+        { page == 'dashboard' ? <DashboardContainer /> : <div>Dupa</div> }
         <footer className="container-fluid">
           <nav className="navbar fixed-bottom">
             Copyright &copy; Janek Kurzydlo & Dominik Bujas 2018
