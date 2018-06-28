@@ -1,16 +1,28 @@
 import React from 'react';
+import Input from 'react-toolbox/lib/input';
+import axios from 'axios'
 
 class NewTrip extends React.Component {
+  state = { name: '', description: ''};
+
+  handleChange = (name, value) => {
+    this.setState({...this.state, [name]: value});
+  };
 
   handleSubmit(event) {
+    const {onNewTripSuccess} = this.props
+
     axios({
       method: 'post',
       url: 'https://applications-uj-server.herokuapp.com/trips',
       data: {
-        firstName: this.state.name,
-        lastName: this.state.description
+        name: this.state.name,
+        description: this.state.description
       }
-    });
+    })
+      .then(function(response) {
+        onNewTripSuccess()
+      })
     event.preventDefault();
   }
 
