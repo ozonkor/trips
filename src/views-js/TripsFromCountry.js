@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../stylesheets/TripFromCountries.css';
-import Bootstrap from 'bootstrap/dist/css/bootstrap.css'
 
 
 export default class TripsFromCountry extends Component {

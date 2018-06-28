@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import '../stylesheets/userTrips.css';
-import Bootstrap from 'bootstrap/dist/css/bootstrap.css'
 
 
 export default class UserTrips extends Component {

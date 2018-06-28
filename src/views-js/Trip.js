@@ -1,44 +1,39 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import '../stylesheets/Trip.css';
-import Bootstrap from 'bootstrap/dist/css/bootstrap.css'
+import React from 'react';
 
+class Trip extends React.Component {
 
-export default class Trip extends Component {
-    constructor(props) {
-        super(props);
+  handleClick() {
+    const {showTrip, trip} = this.props
+    showTrip(trip)
+  }
 
-        this.state = {
-            trip: [],
-        };
-    }
+  render() {
+    const {trip} = this.props
 
-    fetchTrip() {
-        const {token} = this.props;
-        axios.get(`https://applications-uj-server.herokuapp.com/trips/1`)
-            .then(response => {
-                this.setState({
-                    trip: response.data,
-                })
-            })
-            .catch(error => console.log(error))
-    }
-
-    componentDidMount() {
-        this.fetchTrip();
-    }
-
-    render () {
-        return (
-            <div className="trip">
-                <h1>Trip from {this.state.trip.name}</h1>
-                <hr />
-                <ul className="trip-list">
-                    {
-                        <a href={`http://onet.pl`} className="trip-list-href">{this.state.trip.name}</a>
-                    }
-                </ul>
-            </div>
-        )
-    }
+    return (
+      <div className="col-lg-4 col-md-6 mb-4">
+        <div className="card h-100">
+          <a href="#"><img className="card-img-top" src="http://via.placeholder.com/100x70" alt="" /></a>
+          <div className="card-body">
+            <h4 className="card-title">
+              <a href="#">{trip.name}</a>
+            </h4>
+            <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+              aspernatur!</p>
+            <a href="#"
+               className="btn btn-primary"
+               onClick={(e) => this.handleClick(e)}
+            >
+              Show
+            </a>
+          </div>
+          <div className="card-footer">
+            <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+          </div>
+        </div>
+      </div>
+    )
+  }
 }
+export default Trip;
+

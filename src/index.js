@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
+import App from './App';
 import ThemeProvider from 'react-toolbox/lib/ThemeProvider';
 import theme from './toolbox/theme';
-import App from './App';
-import './stylesheets/index.css';
 
 ReactDOM.render(
     <ThemeProvider theme={theme}>
