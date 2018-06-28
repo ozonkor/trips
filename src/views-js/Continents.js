@@ -7,6 +7,7 @@ import Bootstrap from 'bootstrap/dist/css/bootstrap.css'
 import ListGroup from 'react-bootstrap'
 import ListGroupItem from 'react-bootstrap'
 import {Media} from'reactstrap';
+import Button from 'react-toolbox/lib/button/Button';
 
 export default class Continents extends Component {
     constructor(props) {
@@ -37,16 +38,14 @@ export default class Continents extends Component {
 
     render () {
 
-
         const continents = this.state.continents.map((continent) => {
             return(
                 <div key={continent.id} className="col-12 mt-2">
-                     <Media tag="li">
                          <Media body className="ml-5">
-                             <Media heading>{continent.name}</Media>
+                             <Button raised primary>{continent.name}</Button>
+                             <hr/>
                              {/*<p>{continent.trips}</p>*/}
                          </Media>
-                     </Media>
                 </div>
             );
         });
