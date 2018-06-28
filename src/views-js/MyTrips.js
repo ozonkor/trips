@@ -12,7 +12,7 @@ class MyTrips extends React.Component {
 
   fetchTrips() {
     const {token} = this.props
-    axios.get(`https://applications-uj-server.herokuapp.com/my_trips?token=${token}`)
+    axios.get(`https://applications-uj-server.herokuapp.com/trips/my_trips?token=${token}`)
       .then(response => {
         this.setState({
           trips: response.data,
