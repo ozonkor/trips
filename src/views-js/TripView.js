@@ -30,6 +30,7 @@ class TripView extends React.Component {
                       <h4 className="card-title">
                           {selectedTrip.name}
                       </h4>
+                    <h5>{selectedTrip.description}</h5>
                   </div>
                   <div>
 
