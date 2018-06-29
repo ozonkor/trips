@@ -18,8 +18,7 @@ class Trip extends React.Component {
             <h4 className="card-title">
               <a href="#">{trip.name}</a>
             </h4>
-            <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
-              aspernatur!</p>
+            <p className="card-text">{trip.description}</p>
             { this.props.showTrip &&
               <a href="#"
                  className="btn btn-primary"
