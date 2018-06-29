@@ -24,15 +24,16 @@ class TripView extends React.Component {
           height: '100%'
       }
       return (
-            <div>
-                  <a href="#"><img className="card-img-top" src="http://via.placeholder.com/100x70" alt="" /></a>
+            <div className="container">
+              <div className="row">
                   <div className="card-body">
                       <h4 className="card-title">
                           {selectedTrip.name}
                       </h4>
                     <h5>{selectedTrip.description}</h5>
                   </div>
-                  <div>
+              </div>
+                  <div className="row">
 
                       <Map
                           google={this.props.google}
